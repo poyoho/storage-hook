@@ -1,0 +1,27 @@
+{
+  "name": "@poyoho/storage-hook",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/storage-hook.es.js",
+  "module": "dist/storage-hook.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "test": "vitest run",
+    "test:dev": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "release": "esmo ./scripts/release.ts"
+  },
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "esno": "^0.14.1",
+    "happy-dom": "^2.49.0",
+    "typescript": "^4.6.2",
+    "vite": "2.8.6",
+    "vitest": "^0.7.0"
+  },
+  "stackblitz": {
+    "startCommand": "npm run dev"
+  }
+}
