@@ -1,6 +1,13 @@
 # storage-hook
 
-storage-hook ensures that the original type of js (String / Boolean / Number / Date / Object / Array) is stable.
+<p align="start">
+  <a href="https://npmjs.com/package/vite"><img src="https://img.shields.io/npm/v/@poyoho/storage-hook.svg" alt="npm package"></a>
+  <a href="https://github.com/vitejs/vite/actions/workflows/ci.yml"><img src="https://github.com/vitejs/vite/actions/workflows/ci.yml/badge.svg?branch=main" alt="build status"></a>
+  <a href="https://codecov.io/github/poyoho/storage-hook"><img src="https://badgen.net/codecov/c/github/poyoho/storage-hook" alt="code coverage"></a>
+</p>
+<br/>
+
+storage-hook ensures that the original type of js (String / Boolean / Number / Date / Object / Array) is stable in storage (localStorage, sessionStorage and more).
 
 **example**
 
