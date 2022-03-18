@@ -10,8 +10,10 @@ specifiers:
   happy-dom: ^2.49.0
   minimist: ^1.2.5
   picocolors: ^1.0.0
+  prettier: 2.5.1
   prompts: ^2.4.2
   semver: ^7.3.5
+  simple-git-hooks: ^2.7.0
   typescript: ^4.6.2
   vite: 2.8.6
   vitest: ^0.7.0
@@ -26,8 +28,10 @@ devDependencies:
   happy-dom: 2.49.0
   minimist: 1.2.5
   picocolors: 1.0.0
+  prettier: 2.5.1
   prompts: 2.4.2
   semver: 7.3.5
+  simple-git-hooks: 2.7.0
   typescript: 4.6.2
   vite: 2.8.6
   vitest: 0.7.0_c8@7.11.0+happy-dom@2.49.0
@@ -897,6 +901,12 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
@@ -1006,6 +1016,12 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: true
+
+  /simple-git-hooks/2.7.0:
+    resolution: {integrity: sha512-nQe6ASMO9zn5/htIrU37xEIHGr9E6wikXelLbOeTcfsX2O++DHaVug7RSQoq+kO7DvZTH37WA5gW49hN9HTDmQ==}
+    hasBin: true
+    requiresBuild: true
     dev: true
 
   /sisteransi/1.0.5:

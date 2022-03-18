@@ -79,8 +79,5 @@ jobs:
       - name: Install deps
         run: pnpm install
 
-      - name: Lint
-        run: pnpm run lint
-
       - name: Check formatting
         run: pnpm prettier --check .

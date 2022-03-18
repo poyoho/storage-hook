@@ -5,12 +5,12 @@ export default defineConfig({
   build: {
     lib: {
       name: 'storageHook',
-      formats: ["es", "iife"],
-      entry: "./lib/index.ts"
+      formats: ['es', 'iife'],
+      entry: './lib/index.ts'
     },
-    sourcemap: true,
+    sourcemap: true
   },
   test: {
-    environment: "happy-dom"
-  },
+    environment: 'happy-dom'
+  }
 })

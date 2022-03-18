@@ -5,7 +5,7 @@ export const enum ErrorCodes {
   STORAGE_KEY_UNDEFINED,
   STORAGE_UNEXPECTED_NUMBER,
   STORAGE_UNEXPECTED_OBJECT,
-  STORAGE_UNEXPECTED_DATE,
+  STORAGE_UNEXPECTED_DATE
 }
 
 export const errorMessages: Record<ErrorCodes, string> = {
@@ -15,14 +15,14 @@ export const errorMessages: Record<ErrorCodes, string> = {
   [ErrorCodes.STORAGE_KEY_UNDEFINED]: '[Storage] undefined key',
   [ErrorCodes.STORAGE_UNEXPECTED_NUMBER]: '[Storage] not expected number key',
   [ErrorCodes.STORAGE_UNEXPECTED_OBJECT]: '[Storage] not expected object key',
-  [ErrorCodes.STORAGE_UNEXPECTED_DATE]: '[Storage] not expected date key',
+  [ErrorCodes.STORAGE_UNEXPECTED_DATE]: '[Storage] not expected date key'
 }
 
 export interface StorageError extends SyntaxError {
   code: ErrorCodes
 }
 
-export function createCommonError (
+export function createCommonError(
   code: ErrorCodes,
   additionalMessage?: string
 ) {
@@ -32,7 +32,7 @@ export function createCommonError (
   return error
 }
 
-export function createAsyncCommonError (
+export function createAsyncCommonError(
   code: ErrorCodes,
   additionalMessage?: string
 ) {

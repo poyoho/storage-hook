@@ -2,7 +2,7 @@
 
 storage-hook ensures that the original type of js (String / Boolean / Number / Date / Object / Array) is stable.
 
-__example__
+**example**
 
 ```ts
 interface User {
@@ -13,13 +13,13 @@ const test = useLocalStorage({
   aa: Boolean,
   bb: Number,
   cc: String,
-  asd: Object as unknown as User,
+  asd: Object as unknown as User
 })
 
 test.getItem('aa')
 ```
 
-__about object__
+**about object**
 
 ```ts
 interface User {
@@ -27,11 +27,11 @@ interface User {
   age?: number
 }
 useLocalStorage({
-  user: Object as unknown as User,
+  user: Object as unknown as User
 })
 ```
 
-There is no way to ensure the type of Object after ts coercion (e.g. `interface User` in the above example). 
+There is no way to ensure the type of Object after ts coercion (e.g. `interface User` in the above example).
 
 Provide two ideas：
 
@@ -44,4 +44,4 @@ const user = useLocalStorage({
 })
 ```
 
-2. validate by yourself. 
+2. validate by yourself.
