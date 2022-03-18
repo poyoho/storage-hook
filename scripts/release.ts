@@ -18,7 +18,7 @@ async function main(): Promise<void> {
 
   await logRecentCommits()
 
-  const { currentVersion, pkgPath } = getPackageInfo()
+  const { currentVersion, pkgPath } = await getPackageInfo()
 
   if (!targetVersion) {
     const { release }: { release: string } = await prompts({
@@ -84,7 +84,7 @@ async function main(): Promise<void> {
   } else {
     console.log(
       colors.green(
-        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/vitejs/vite/actions/workflows/publish.yml'
+        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/poyoho/storage-hook/actions/workflows/publish.yml'
       )
     )
   }

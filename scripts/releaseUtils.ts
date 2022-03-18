@@ -3,13 +3,14 @@
 */
 import colors from 'picocolors'
 import type { Options as ExecaOptions } from 'execa'
-import { execaNode } from 'execa'
+import execa from 'execa'
 import { readFileSync, writeFileSync } from 'fs'
 import path from 'path'
 import type { ReleaseType } from 'semver'
 import semver from 'semver'
+import minimist from "minimist"
 
-export const args = require('minimist')(process.argv.slice(2))
+export const args = minimist(process.argv.slice(2))
 export const isDryRun = !!args.dry
 
 if (isDryRun) {
@@ -28,7 +29,7 @@ export async function run(
   args: string[],
   opts: ExecaOptions<string> = {}
 ) {
-  return execaNode(bin, args, { stdio: 'inherit', ...opts })
+  return execa(bin, args, { stdio: 'inherit', ...opts })
 }
 
 export async function dryRun(
@@ -149,17 +150,18 @@ export async function logRecentCommits() {
   console.log()
 }
 
-export function getPackageInfo() {
-  const pkgPath = path.resolve("../package.json")
+export async function getPackageInfo() {
+  const pkgPath = path.resolve("./package.json")
   const pkg: {
     name: string
     version: string
-  } = require(pkgPath)
+  } = await import(pkgPath)
   const currentVersion = pkg.version
 
   return {
     pkg,
     pkgPath,
+    pkgDir: path.resolve(),
     currentVersion
   }
 }
