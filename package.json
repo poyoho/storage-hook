@@ -1,10 +1,16 @@
 {
   "name": "@poyoho/storage-hook",
   "license": "MIT",
+  "author": "poyoho",
+  "description": "type stable storage hook",
   "main": "dist/storage-hook.es.js",
   "module": "dist/storage-hook.es.js",
   "types": "dist/types/index.d.ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poyoho/storage-hook"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc",
