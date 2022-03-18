@@ -18,7 +18,7 @@ async function main(): Promise<void> {
 
   await logRecentCommits()
 
-  const { currentVersion, pkgPath } = getPackageInfo()
+  const { currentVersion, pkgPath } = await getPackageInfo()
 
   if (!targetVersion) {
     const { release }: { release: string } = await prompts({
