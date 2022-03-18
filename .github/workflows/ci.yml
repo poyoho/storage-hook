@@ -56,10 +56,10 @@ jobs:
       - name: Test coverage
         run: pnpm run test:coverage
 
-      - name: Upload coverage results to Codecov.io
-        run: pnpm run codecov
-        env:
-          token: ${{ secrets.CODECOV_TOKEN }}
+      # - name: Upload coverage results to Codecov.io
+      #   run: pnpm run codecov
+      #   env:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload coverage results to Codecov.io
         uses: codecov/codecov-action@v2
