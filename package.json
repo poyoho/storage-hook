@@ -20,7 +20,7 @@
     "release": "esmo scripts/release.ts",
     "format": "prettier --write .",
     "ci-publish": "esmo scripts/publishCI.ts",
-    "codecov": "codecov -f coverage/tmp/*.json",
+    "codecov": "codecov",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
