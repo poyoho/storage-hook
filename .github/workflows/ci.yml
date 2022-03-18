@@ -53,6 +53,8 @@ jobs:
       - name: Test
         run: pnpm run test
 
+      - uses: codecov/codecov-action@v2
+
   lint:
     timeout-minutes: 10
     runs-on: ubuntu-latest
