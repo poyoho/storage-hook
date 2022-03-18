@@ -57,9 +57,12 @@ jobs:
         run: pnpm run test:coverage
 
       - name: Upload coverage results to Codecov.io
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v2.1.0
         with:
-          token: ${{secrets.CODECOV_TOKEN}}
+          directory: ./coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+          verbose: true
 
   lint:
     timeout-minutes: 10
