@@ -6,7 +6,7 @@
   "main": "dist/storage-hook.es.js",
   "module": "dist/storage-hook.es.js",
   "types": "dist/types/index.d.ts",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/poyoho/storage-hook"
