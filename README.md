@@ -3,7 +3,7 @@
 <p align="start">
   <a href="https://www.npmjs.com/package/@poyoho/storage-hook"><img src="https://img.shields.io/npm/v/@poyoho/storage-hook.svg" alt="npm package"></a>
   <a href="https://github.com/poyoho/storage-hook/actions/workflows/ci.yml"><img src="https://github.com/poyoho/storage-hook/actions/workflows/ci.yml/badge.svg?branch=master" alt="build status"></a>
-  <a href="https://codecov.io/gh/poyoho/storage-hook"><img src="https://codecov.io/gh/poyoho/storage-hook/branch/master/graph/badge.svg?token=IM1TE3Y93B"/></a>
+  <a href="https://codecov.io/gh/poyoho/storage-hook"><img src="https://codecov.io/gh/poyoho/storage-hook/branch/master/graph/badge.svg"/></a>
 </p>
 <br/>
 
