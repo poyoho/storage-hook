@@ -13,7 +13,7 @@
     "test:coverage": "vitest run --coverage",
     "release": "esmo scripts/release.ts",
     "format": "prettier --write .",
-    "ci-publish": "ts-node scripts/publishCI.ts"
+    "ci-publish": "esmo scripts/publishCI.ts"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",
