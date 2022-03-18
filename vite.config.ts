@@ -13,7 +13,7 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     coverage: {
-      reporter: ['clover']
+      reporter: ['json', "text", "text-summary"]
     }
   }
 })
