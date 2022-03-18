@@ -28,7 +28,7 @@ jobs:
         node_version: [16]
       fail-fast: false
 
-    name: "Build&Test: node-${{ matrix.node_version }}, ${{ matrix.os }}"
+    name: "Test: node-${{ matrix.node_version }}, ${{ matrix.os }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -59,9 +59,11 @@ jobs:
       - name: Upload coverage results to Codecov.io
         uses: codecov/codecov-action@v2.1.0
         with:
-          directory: ./coverage
           token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+          directory: ./coverage
+          flags: unittests
+          name: codecov-umbrella
+          path_to_write_report: ./coverage/codecov_report.txt
           verbose: true
 
   lint:
