@@ -50,12 +50,11 @@ const ls = useLocalStorage({
 and then we can use localstorage api and had the expect type.
 
 ```ts
-const key1 = ls.getItem("key1")
+const key1 = ls.getItem('key1')
 // must be boolean or not will throw a promise error
 key1
 
-
-ls.setItem("key1", true)
+ls.setItem('key1', true)
 ```
 
 ### about deep object
@@ -65,7 +64,7 @@ But there is no way to ensure the type of Object after ts coercion (e.g. `interf
 we don't traverse the object to make the object type stable.
 
 ```ts
-const user = ls.getItem("key4")
+const user = ls.getItem('key4')
 // not necessarily exist and type not necessarily be string
 user.name
 ```
