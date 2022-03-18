@@ -61,16 +61,6 @@ jobs:
         env:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Upload coverage results to Codecov.io github action
-        uses: codecov/codecov-action@v2.1.0
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage/clover.xml
-          flags: unittests
-          verbose: true
-        env:
-          token: ${{ secrets.CODECOV_TOKEN }}
-
   lint:
     timeout-minutes: 10
     runs-on: ubuntu-latest
