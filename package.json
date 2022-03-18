@@ -20,13 +20,14 @@
     "release": "esmo scripts/release.ts",
     "format": "prettier --write .",
     "ci-publish": "esmo scripts/publishCI.ts",
-    "codecov": "codecov -f coverage/tmp/*.json",
+    "codecov": "codecov",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",
     "@types/prompts": "^2.0.14",
     "@types/semver": "^7.3.9",
+    "lint-staged": "^12.3.3",
     "c8": "^7.11.0",
     "codecov": "^3.8.3",
     "esno": "^0.14.1",
@@ -43,6 +44,7 @@
     "vitest": "^0.7.0"
   },
   "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false",
     "commit-msg": "pnpm exec esmo scripts/verifyCommit.ts $1"
   },
   "lint-staged": {

@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - main
+      - master
       - release/*
       - feat/*
   pull_request:
@@ -57,6 +57,7 @@ jobs:
         run: pnpm run test:coverage
 
       - name: Upload coverage results to Codecov.io
+        if: github.repository == 'poyoho/storage-hook' && github.ref == 'refs/heads/master'
         run: pnpm run codecov
         env:
           token: ${{ secrets.CODECOV_TOKEN }}
