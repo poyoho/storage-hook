@@ -56,7 +56,10 @@ jobs:
       - name: Test coverage
         run: pnpm run test:coverage
 
-      - uses: codecov/codecov-action@v2
+      - name: Upload coverage results to Codecov.io
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
 
   lint:
     timeout-minutes: 10
