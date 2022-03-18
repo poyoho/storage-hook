@@ -1,10 +1,16 @@
 {
   "name": "@poyoho/storage-hook",
   "license": "MIT",
+  "author": "poyoho",
+  "description": "type stable storage hook",
   "main": "dist/storage-hook.es.js",
   "module": "dist/storage-hook.es.js",
   "types": "dist/types/index.d.ts",
-  "version": "0.0.1",
+  "version": "0.0.7",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poyoho/storage-hook"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc",
@@ -12,7 +18,9 @@
     "test:dev": "vitest",
     "test:coverage": "vitest run --coverage",
     "release": "esmo scripts/release.ts",
-    "ci-publish": "ts-node scripts/publishCI.ts"
+    "format": "prettier --write .",
+    "ci-publish": "esmo scripts/publishCI.ts",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.2",
@@ -28,9 +36,20 @@
     "semver": "^7.3.5",
     "typescript": "^4.6.2",
     "vite": "2.8.6",
+    "prettier": "2.5.1",
+    "simple-git-hooks": "^2.7.0",
     "vitest": "^0.7.0"
   },
-  "stackblitz": {
-    "startCommand": "npm run dev"
-  }
+  "simple-git-hooks": {
+    "commit-msg": "pnpm exec esmo scripts/verifyCommit.ts $1"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "files": [
+    "dist",
+    "lib"
+  ]
 }

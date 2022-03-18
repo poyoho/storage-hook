@@ -1,6 +1,6 @@
 /**
  * modified from https://github.com/vuejs/core/blob/master/scripts/release.js
-*/
+ */
 import colors from 'picocolors'
 import type { Options as ExecaOptions } from 'execa'
 import execa from 'execa'
@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync } from 'fs'
 import path from 'path'
 import type { ReleaseType } from 'semver'
 import semver from 'semver'
-import minimist from "minimist"
+import minimist from 'minimist'
 
 export const args = minimist(process.argv.slice(2))
 export const isDryRun = !!args.dry
@@ -18,11 +18,7 @@ if (isDryRun) {
   console.log()
 }
 
-export const versionIncrements: ReleaseType[] = [
-  'patch',
-  'minor',
-  'major'
-]
+export const versionIncrements: ReleaseType[] = ['patch', 'minor', 'major']
 
 export async function run(
   bin: string,
@@ -132,26 +128,21 @@ export async function logRecentCommits() {
   }).then((res) => res.stdout.trim())
   console.log(
     colors.bold(
-      `\n${colors.blue(`i`)} Commits of ${colors.green("storage-hook")} since ${colors.green(tag)} ${colors.gray(`(${sha.slice(0, 5)})`)}`
+      `\n${colors.blue(`i`)} Commits of ${colors.green(
+        'storage-hook'
+      )} since ${colors.green(tag)} ${colors.gray(`(${sha.slice(0, 5)})`)}`
     )
   )
   await run(
     'git',
-    [
-      '--no-pager',
-      'log',
-      `${sha}..HEAD`,
-      '--oneline',
-      '--',
-      `lib/`
-    ],
+    ['--no-pager', 'log', `${sha}..HEAD`, '--oneline', '--', `lib/`],
     { stdio: 'inherit' }
   )
   console.log()
 }
 
 export async function getPackageInfo() {
-  const pkgPath = path.resolve("./package.json")
+  const pkgPath = path.resolve('./package.json')
   const pkg: {
     name: string
     version: string
