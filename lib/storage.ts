@@ -21,6 +21,12 @@ export type OptionMap<P = Record<string, unknown>> = {
   [K in keyof P]: Type<P[K]> | object // object for support `as any as Interface`
 }
 
+export type ExactStorageOptions<T> = T extends StorageAccessor<infer N>
+  ? N extends Object
+    ? { [K in keyof N]: InferKeyType<N[K]> }
+    : never
+  : never
+
 export interface StorageAccessor<Options> {
   getItem<K extends string & keyof Options>(
     key: K
