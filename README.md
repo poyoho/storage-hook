@@ -32,7 +32,7 @@ Using unpkg CDN:
 
 ## Example
 
-`useLocalStorage` create a type stable localstorage object.
+`useLocalStorage` create a type stable localstorage instance.
 
 ```ts
 interface User {
@@ -47,14 +47,36 @@ const ls = useLocalStorage({
 })
 ```
 
-and then we can use localstorage api and had the expect type.
+we can use localstorage api and had the expect type.
 
 ```ts
 const key1 = ls.getItem('key1')
 // must be boolean or not will throw a promise error
 key1
+```
 
+setting storage.
+
+```ts
 ls.setItem('key1', true)
+```
+
+remove storage key.
+
+```ts
+ls.removeItem('key1')
+```
+
+clear all storage keys.
+
+```ts
+ls.clear()
+```
+
+exact the options types.
+
+```ts
+type Options = ExactStorageOptions<typeof ls>
 ```
 
 ### about deep object
