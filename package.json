@@ -1,17 +1,22 @@
 {
-  "name": "@poyoho/storage-hook",
+  "name": "store-hook",
   "license": "MIT",
   "author": "poyoho",
-  "description": "type stable storage hook",
+  "description": "type stable store hook",
   "type": "module",
-  "main": "dist/storage-hook.es.js",
-  "module": "dist/storage-hook.es.js",
+  "main": "dist/store-hook.es.js",
+  "module": "dist/store-hook.es.js",
   "types": "dist/types/index.d.ts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/poyoho/storage-hook"
   },
+  "keywords": [
+    "store",
+    "localstorage",
+    "sessionstorage"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc",
