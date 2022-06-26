@@ -11,5 +11,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `hello`
+              body: `|1|2|3|\n` + `|----|----|----|\n` + '|1|2|3|\n'
             })
