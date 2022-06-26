@@ -25,7 +25,9 @@ export default function ReporterPlugin(): Plugin {
         const end = Date.now()
 
         if (result != null && filter(id)) {
-          transformMap[id] ||= { hooks: 'transform', timing: 0 }
+          if (!transformMap[id]) {
+            transformMap[id] = { hooks: 'transform', timing: 0 }
+          }
           transformMap[id].timing += end - start
         }
 
@@ -42,7 +44,9 @@ export default function ReporterPlugin(): Plugin {
         const end = Date.now()
 
         if (result != null && filter(id)) {
-          transformMap[id] ||= { hooks: 'load', timing: 0 }
+          if (!transformMap[id]) {
+            transformMap[id] = { hooks: 'load', timing: 0 }
+          }
           transformMap[id].timing += end - start
         }
 
