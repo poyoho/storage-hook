@@ -80,7 +80,8 @@ jobs:
               ...context.repo,
               issue_number: context.issue.number
             })).data
-            for (const issue of comments) {
+            console.log(comments)
+            for (const c of comments) {
               if (c.user.type === 'Bot' && c.body.includes('<!--report-->')) {
                 commentId = c.id;
                 break;
