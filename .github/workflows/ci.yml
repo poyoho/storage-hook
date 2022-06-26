@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node_version: [16]
+        node_version: [14, 16]
       fail-fast: false
 
     name: "Test: node-${{ matrix.node_version }}, ${{ matrix.os }}"
@@ -87,3 +87,19 @@ jobs:
 
       - name: Check formatting
         run: pnpm prettier --check .
+
+  reporter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require("fs")
+            console.log(__dirname)
+            const comment = fs.readFileSync(path.join(__dirname, '../../report.md'), { encoding: 'utf-8' })
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            })

@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
+import Reporter from "./scripts/reporter"
 
 export default defineConfig({
   build: {
@@ -10,6 +11,9 @@ export default defineConfig({
     },
     sourcemap: true
   },
+  plugins: [
+    Reporter()
+  ],
   test: {
     environment: 'happy-dom',
     coverage: {
