@@ -62,6 +62,22 @@ jobs:
         env:
           token: ${{ secrets.CODECOV_TOKEN }}
 
+      - name: reporter
+        uses: actions/github-script@v6
+        if: matrix.node_version == '16' && matrix.os == 'ubuntu-latest'
+        with:
+          script: |
+            const fs = require('fs')
+            const path = require('path')
+            console.log(path.resolve('../../report.md'))
+            const comment = fs.readFileSync(path.resolve('../../report.md'), { encoding: 'utf-8' })
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            })
+
   lint:
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -87,19 +103,3 @@ jobs:
 
       - name: Check formatting
         run: pnpm prettier --check .
-
-  reporter:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require("fs")
-            console.log(__dirname)
-            const comment = fs.readFileSync(path.join(__dirname, '../../report.md'), { encoding: 'utf-8' })
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            })
