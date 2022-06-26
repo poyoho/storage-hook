@@ -64,6 +64,7 @@ jobs:
 
       - name: reporter
         uses: actions/github-script@v6
+        on: pull_request
         if: matrix.node_version == '16' && matrix.os == 'ubuntu-latest'
         with:
           script: |
