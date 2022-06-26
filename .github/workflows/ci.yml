@@ -75,11 +75,11 @@ jobs:
               repo: context.repo.repo,
               body: fs.readFileSync(path.resolve('./report.md'), { encoding: 'utf-8' })
             }
-            const comments = github.rest.issues.listComments({
+            let commentId
+            const comments = (await github.rest.issues.listComments({
               ...context.repo,
               issue_number: context.issue.number
-            })
-            let commentId;
+            })).data
             for (const issue of comments) {
               if (c.user.type === 'Bot' && c.body.includes('<!--report-->')) {
                 commentId = c.id;
