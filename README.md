@@ -1,10 +1,10 @@
 # storage-hook
 
 <p align="start">
-  <a href="https://www.npmjs.com/package/@poyoho/storage-hook"><img src="https://img.shields.io/npm/v/@poyoho/storage-hook.svg" alt="npm package"></a>
+  <a href="https://www.npmjs.com/package/store-hook"><img src="https://img.shields.io/npm/v/store-hook.svg" alt="npm package"></a>
   <a href="https://github.com/poyoho/storage-hook/actions/workflows/ci.yml"><img src="https://github.com/poyoho/storage-hook/actions/workflows/ci.yml/badge.svg?branch=master" alt="build status"></a>
   <a href="https://codecov.io/gh/poyoho/storage-hook"><img src="https://codecov.io/gh/poyoho/storage-hook/branch/master/graph/badge.svg"/></a>
-  <!-- <a href="https://packagephobia.com/result?p=@poyoho/storage-hook"><img src="https://packagephobia.com/badge?p=@poyoho/storage-hook"/></a> -->
+  <!-- <a href="https://packagephobia.com/result?p=store-hook"><img src="https://packagephobia.com/badge?p=store-hook"/></a> -->
 </p>
 <br/>
 
@@ -15,19 +15,19 @@ storage-hook ensures that the original type of js (String / Boolean / Number / D
 Using npm:
 
 ```sh
-$ npm install @poyoho/storage-hook
+$ npm install store-hook
 ```
 
 Using yarn:
 
 ```sh
-$ yarn add @poyoho/storage-hook
+$ yarn add store-hook
 ```
 
 Using unpkg CDN:
 
 ```
-<script src="https://unpkg.com/@poyoho/storage-hook/dist/storage-hook.iife.js"></script>
+<script src="https://unpkg.com/store-hook/dist/storage-hook.iife.js"></script>
 ```
 
 ## Example
