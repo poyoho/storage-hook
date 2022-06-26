@@ -7,7 +7,6 @@ interface ReportInfo {
   timing: number
 }
 
-
 const res = {} as Record<string, ReportInfo>
 
 export default function ReporterPlugin(): Plugin {
