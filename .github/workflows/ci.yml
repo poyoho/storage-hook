@@ -69,8 +69,7 @@ jobs:
           script: |
             const fs = require('fs')
             const path = require('path')
-            console.log(path.resolve('../../report.md'))
-            const comment = fs.readFileSync(path.resolve('../../report.md'), { encoding: 'utf-8' })
+            const comment = fs.readFileSync(path.resolve('./report.md'), { encoding: 'utf-8' })
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
